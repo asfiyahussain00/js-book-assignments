@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Assignment-53-57</h2>
+    <h2>EVENTS</h2>
+   <!-- 1. Consider you have 4 images in a file as shown below: -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvI7z0vbSNwdpO1QdUnJIoGde3NzEq3swL7wWAJaR&s" alt="Image 1" width="300px" height="50%" onclick="openModal(this.src)"/>
+    <img src="https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?cs=srgb&dl=pexels-fabian-wiktor-994605.jpg&fm=jpg" alt="Image 2" width="300px" height="50%" onclick="openModal(this.src)"/>
+    <img src="https://video.cgtn.com/news/77416a4e7a67544e786b544f344d444e304d7a4e31457a6333566d54/video/ca413729bcf64502ab923c080b9d0920/ca413729bcf64502ab923c080b9d0920.jpg" alt="Image 3" width="300px" height="50%" onclick="openModal(this.src)"/>
+    <img src="https://c4.wallpaperflare.com/wallpaper/432/438/356/desert-dune-nature-landscape-wallpaper-preview.jpg" alt="Image 4" width="200px" height="50%" onclick="openModal(this.src)"/>
+
+    <!--Now When you click on an image it should display in a modal -->
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
+    <!-- javascript-->
+    <script>
+        function openModal(src) {
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modalImg");
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+    </script>
+
+    <!-- 2. Create a paragraph and two buttons “zoom in ”(+) and “zoom out”(-).
+ On each click on “zoom in”(+) , add 10px in font size of paragraph.
+ And on each click on “zoom out”(-) , minus 10px in font size of paragraph.
+Paragraph zoom functions -->
+    <!-- Paragraph -->
+    <h1> Paragraph Zoom</h1>
+    <p id="myParagraph">
+        “Be good to yourself.
+        “This is what you're going through, not who you are.”
+        “I hope you are surrounded by people who are good for your spirit.”
+        “You are amazing for facing this with so much courage and hope.”
+        “The most important thing right now is to focus on getting better…
+    </p>
+    <button onclick="zoomIn()">Zoom In (+)</button>
+    <button onclick="zoomOut()">Zoom Out (-)</button>
+    <script>
+        function zoomIn() {
+        var paragraph = document.getElementById("myParagraph");
+        var fontSize = parseInt(window.getComputedStyle(paragraph).fontSize);
+        paragraph.style.fontSize = fontSize + 10 + "px";
+      }
+      
+      function zoomOut() {
+        var paragraph = document.getElementById("myParagraph");
+        var fontSize = parseInt(window.getComputedStyle(paragraph).fontSize);
+        paragraph.style.fontSize = fontSize - 10 + "px";
+      }
+    
+    </script>
+    
+    

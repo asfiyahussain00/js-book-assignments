@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Assignment-45-48</h2>
+    <h2>EVENTS</h2>
+    <!-- 1. Show an alert box on click on a link.-->
+    <a href="#" onclick="alert('Hello, world!');">Click me</a>
+
+    <!--2. Display some Mobile images in browser. On click on an
+    //image Show the message in alert to user.-->
+        <img src=" https://techin.pk/price/assets/images/models/featured/377658537035e540f8a01076f930ad25.jpg" width="100" onclick="alert('oppo smart phone')" >
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/levant/2302/gallery/levant-galaxy-s23-s916-sm-s916blibmea-thumb-534843157?$344_344_PNG$" width="100 " onclick="alert('sumsung smart phone')" >
+        <img src="https://images.priceoye.pk/apple-iphone-13-pakistan-priceoye-whjtp.jpg" width="100" onclick="alert('iphone')" >
+      <!--  3. Display 10 student records in table and each row should contain a delete
+button. If you click on a button to delete a record, entire row should be
+deleted.--> 
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Roll No.</th>
+			<th>Delete</th>
+		</tr>
+		<tr>
+			<td>John </td>
+			<td>90</td>
+			<td><button onclick="deleteRow(this)">Delete</button></td>
+		</tr>
+		<tr>
+			<td>Doe</td>
+			<td>76</td>
+			<td><button onclick="deleteRow(this)">Delete</button></td>
+		</tr>
+		<tr>
+			<td>mark</td>
+			<td>55</td>
+			<td><button onclick="deleteRow(this)">Delete</button></td>
+		</tr>
+        <tr>
+			<td>james</td>
+			<td>92</td>
+			<td><button onclick="deleteRow(this)">Delete</button></td>
+		</tr>
+		<!-- Add 7 more rows here -->
+	</table>
+
+	<script>
+		function deleteRow(btn) {
+			var row = btn.parentNode.parentNode;
+			row.parentNode.removeChild(row);
+		}
+	</script>
+   <!-- 4. Display an image in browser. Change the picture on mouseover and set the
+    first picture on mouseout.-->
+
+        <style>
+            #myImage {
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+        <img id="myImage" src="https://www.shutterstock.com/image-photo/beautiful-picture-seaview-wave-buildings-260nw-1921081685.jpg" onmouseover="mouseover()" onmouseout="mouseout()">
+        <script>
+            var img = document.getElementById("myImage");
+            var imgSrc = img.src;
+            var newImgSrc = "https://live.staticflickr.com/4080/4751681734_d4d7fa159b_b.jpg";
+            
+            function mouseover() {
+                img.src = newImgSrc;
+            }
+            
+            function mouseout() {
+                img.src = imgSrc;
+            }
+        </script>
+    
+    
+   <!-- 5. Show a counter in browser. Counter should increase on click on increase
+    button and decrease on click on decrease button. And show updated counter
+    value in browser.-->
+        <h1>Counter: <span id="counter">0</span></h1>
+        <button onclick="increase()">Increase</button>
+        <button onclick="decrease()">Decrease</button>
+    
+        <script>
+            var counter = 0;
+            var counterElement = document.getElementById("counter");
+    
+            function increase() {
+                counter++;
+                counterElement.innerHTML = counter;
+            }
+    
+            function decrease() {
+                counter--;
+                counterElement.innerHTML = counter;
+            }
+        </script>
+    
+    
+
+</body>
+</html>
+
+
+
+
+ 
